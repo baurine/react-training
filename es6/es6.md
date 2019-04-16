@@ -175,7 +175,7 @@ ES6:
 
 ## 箭头函数
 
-主要用来解决 this 指针的问题
+简化函数写法，以及用来解决 this 指针的问题
 
 Similar with anonymous function, lambda expression, but not exactly same.
 
@@ -336,10 +336,37 @@ Show some project code.
 Promise:
 
     fetch(url1)
-      .then(res1 => res1.data)
+      .then(res1 => res.json())
+      .then(data => data.url2)
       .then(url2 => fetch(url2))
-      .then(res2 => res2.data)
+      .then(res2 => res2.json())
+      .then(data => data.url3)
       .then(url3 => fetch(url3))
+      .catch(err => ...)
       ...
 
 vox music 中的 request 封装
+
+Resource: [JavaScript Promise 迷你书](http://liubin.org/promises-book/)
+
+---
+
+作业：
+
+1. 现有关于星球大战的 API: https://swapi.co/api. https://swapi.co/api/people 可以得到所有人物的列表信息。请封装一个函数，接受一个字符串作为参数，这个字符串是人物姓名，比如 "Luke Skywalker"。在这个函数里，你需要先得到星战所有人物信息，从中过滤出与参数相同姓名的人物，然后在数据中会有这个人物所在家园的星球链接 (字段是 homeworld)，通过这个链接再获星球的详情，返回这个星球的名字和人口数量信息。尽量用到上面所讲特性。
+
+    function getPersonPlanet(name) {
+      // your code
+      // ...
+    }
+
+假设有测试代码，它应该是这样的：
+
+    getPersonPlanet("Luke Skywalker").then(str => assert(str === 'Tatooine - 200000'))
+    getPersonPlanet("Baurine").then(str => assert(str === 'Not found'))
+
+提示：
+
+1. 用 Promise
+1. 用 `res => res.json()` 将 response 按 json 格式转换成 object
+1. 用 find 过虑 (用 filter 也可以)
