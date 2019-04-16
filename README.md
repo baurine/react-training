@@ -18,7 +18,6 @@
    - advanced types
    - declare types
    - use it in React by create-react-app
-   - use it in rails with webpacker
 
 1. React (View)
    - ref: https://reactjs.org/docs/getting-started.html
