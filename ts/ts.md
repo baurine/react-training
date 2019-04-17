@@ -214,4 +214,13 @@ https://github.com/rails/webpacker/blob/master/docs/typescript.md#typescript-wit
 
 ---
 
-作业：将 ES6 的作业加上类型声明。
+作业：
+
+将 ES6 的作业加上类型声明。
+
+具体步骤：
+
+1. mac 有 node 环境或者想尝试的，可以在本地开发调试，执行 `npx create-react-app my-app --typescript`，或者尝试在线开发环境 - codesandbox.io ，尝试自己创建一个 react + ts 的项目，或者 fork https://codesandbox.io/s/zxkm5vv97m 
+1. 创建 types.ts 文件，在这个文件中定义类型，注意要使这些类型能在别的文件中使用，需要 export 出去
+1. 创建 api.ts 文件，将之前实现的 ES6 版本的 `getPersonPlanet()` 方法放在此文件中，增加类型声明，并且把方法 export 出去
+1. 在 index.tsx 使用此方法

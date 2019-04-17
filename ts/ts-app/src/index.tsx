@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { getPersonPlanet } from './api/api';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -163,3 +164,7 @@ console.log(filter4([1,2,3], item => item > 1))
         console.log(`${user.name} - ${user.age}`)
       }
     }
+
+//-----------
+getPersonPlanet("Luke Skywalker").then(str => console.log(str))
+getPersonPlanet("Baurine").then(str => console.log(str))
