@@ -286,3 +286,78 @@ http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
   - inline
   - [styled-compoent](https://www.styled-components.com/) / [emotion](https://emotion.sh/docs/introduction)
 
+
+示例：
+
+    import './StyleExample.css'
+    import styles from './StyleExample.module.css'
+
+    const MyBtn = styled.a`
+      background: palevioletred;
+      color: white;
+      font-size: 1em;
+      margin: 1em;
+      padding: 0.25em 1em;
+      border: 2px solid palevioletred;
+      border-radius: 3px;
+    `
+
+    class StyleExample extends React.Component {
+      render() {
+        return (
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <a className='my_btn'>button 1 (global css)</a>
+            <a className={styles.my_btn}>button 2 (module css)</a>
+            <MyBtn>button 3 (styled-component)</MyBtn>
+          </div>
+        )
+      }
+    }
+
+---
+
+## React Hooks
+
+- https://reactjs.org/docs/hooks-intro.html
+- https://mp.weixin.qq.com/s/vHzgNqaRiDF9tq3JgW7LxQ
+
+目标：替代 class，所有组件都用函数表示。函数组件不再是 stateless 组件了。
+
+原因：class 让人迷惑 (??)，stateful 组件不易复用...
+
+Hooks:
+
+- useState
+- useEffect
+- useContext
+- useReducer
+- useCallback
+- useMemo
+- useRef
+- ...
+
+最常用的是 useState 和 useEffect
+
+来看看前面的计数器用 React Hooks 是怎么实现的：
+
+    import React, { useState, useEffect } from 'react'
+
+    type Props = {
+      initialCnt: number
+    }
+
+    export default function HooksCounter(props: Props) {
+      const [count, setCount] = useState(props.initialCnt)
+
+      useEffect(() => {
+        document.title = `${count}`
+      })
+
+      return (
+        <div>
+          <button onClick={()=>setCount(count-1)}>-</button>
+          <p>{count}</p>
+          <button onClick={()=>setCount(count+1)}>+</button>
+        </div>
+      )
+    }

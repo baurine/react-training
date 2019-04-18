@@ -8,6 +8,7 @@ import Counter from './Counter';
 import WindowWidthViewer from './WindowWidthViewer';
 import CuteCat from './CuteCat';
 import StyleExample from './StyleExample';
+import HooksCounter from './HooksCounter';
 
 class App extends Component {
   render() {
@@ -26,6 +27,8 @@ class App extends Component {
         <CuteCat/>
 
         <StyleExample/>
+
+        <HooksCounter initialCnt={8}/>
       </div>
     );
   }
