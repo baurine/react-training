@@ -9,6 +9,7 @@ import WindowWidthViewer from './WindowWidthViewer';
 import CuteCat from './CuteCat';
 import StyleExample from './StyleExample';
 import HooksCounter from './HooksCounter';
+import SwPerson from './SwPerson';
 
 class App extends Component {
   render() {
@@ -29,6 +30,9 @@ class App extends Component {
         <StyleExample/>
 
         <HooksCounter initialCnt={8}/>
+
+        <SwPerson name='foo'/>
+        <SwPerson name='Luke Skywalker'/>
       </div>
     );
   }

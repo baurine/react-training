@@ -361,3 +361,22 @@ Hooks:
         </div>
       )
     }
+
+---
+
+作业：
+
+在前面的作业中，我们实现了一个方法，获取某个星战人物的母星信息，现在我们把获取到的信息在 UI 上展示出来。请实现这样一个组件：
+
+1. 它接受 name 的 props
+1. 在组件内获取并显示此人的基本信息，比如 name, height
+1. 有一个按钮，点击此按钮，获取并显示它的母星的基本信息，比如 name，population
+1. 如果此人不存在，则显示 "查无此人"，且按钮不显示。
+1. 为简化逻辑，对 API 的访问不考虑分页的情况。
+1. 在 document title 上显示 Person name
+1. 如果获取此人的母星信息，将 person name 和 homeworld name 同时显示在 document title 上
+
+使用示例：
+
+    <SwPerson name='Sky Walker'>
+    <SwPerson name='foo'>
