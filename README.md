@@ -22,8 +22,10 @@
 1. React (View)
    - ref: https://reactjs.org/docs/getting-started.html
    - props & state
-   - react hooks
+   - lifecycle
+   - handle event
    - css: CSS Modules / styled-component / Emotion
+   - react hooks
 
 1. Redux (State manage)
    - manually implement the redux by lines code
