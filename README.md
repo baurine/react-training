@@ -29,11 +29,5 @@
 
 1. Redux (State manage)
    - manually implement the redux by lines code
-   - redux-thunk & redux-saga
+   - manually implement redux-thunk & redux-saga middleware
    - dva
-
-1. Others
-   - webpack
-   - react router
-
----
