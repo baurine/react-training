@@ -1,5 +1,5 @@
 
-#Redux (State manage)
+# Redux (State manage)
 
 - manually implement the redux by lines code
 - manually implement redux-thunk & redux-saga middleware
@@ -11,7 +11,7 @@
 
 所以，最后没理解也没关系。
 
-这有两个 redux 作者亲自录制的视频，
+这还有两个 redux 作者亲自录制的视频，
 
 - [Getting Started with Redux](https://egghead.io/courses/getting-started-with-redux)
 - [Building React Applications with Idiomatic Redux](https://egghead.io/courses/building-react-applications-with-idiomatic-redux)
@@ -150,7 +150,9 @@ CounterContainer2:
 
 创建一个 store.ts
 
-为什么要用函数，生成闭包，使之不能直接修改，只能通过方法修改，因为通过方法可以生成多个 store
+为什么要用函数，生成闭包，使之不能直接修改，只能通过方法修改
+
+还有就是因为通过调用函数可以生成多个 store
 
     function createStore(initialState: any) {
       const state = initialState || {}
@@ -744,3 +746,7 @@ redux-saga 监听某些 type 的 action，匹配到相应的 action 后，再执
 ---
 
 作业：
+
+理解 https://codesandbox.io/s/9yjr1y6k9o 项目中的代码，并仿照 SwPersons 组件实现 SwPersonsFav 组件。最终效果如下：
+
+![](./redux-homework.gif)
