@@ -8,7 +8,7 @@ export default function connect2(mapStateToProps: (state: any) => any, mapDispat
       store: any
     
       componentDidMount() {
-        this.subscription = this.store.subscribe(()=>this.forceUpdate())
+        this.subscription = this.store.subscribe(()=>this.setState({}))
       }
 
       componentWillUnmount() {
