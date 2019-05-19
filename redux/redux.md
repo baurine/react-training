@@ -226,39 +226,39 @@ CounterContainer2:
 
 Counter4:
 
-  import store from './store'
+    import store from './store'
 
-  export default class Counter4 extends React.Component {
-    subscription: any
+    export default class Counter4 extends React.Component {
+      subscription: any
 
-    componentDidMount() {
-      this.subscription = store.subscribe(()=>this.forceUpdate())
+      componentDidMount() {
+        this.subscription = store.subscribe(()=>this.forceUpdate())
+      }
+
+      componentWillUnmount() {
+        this.subscription()
+      }
+
+      incCount = () => {
+        store.incCnt()
+      }
+
+      decCount = () => {
+        store.decCnt()
+      }
+
+      render() {
+        const { cnt } = store.getState()
+
+        return (
+          <div style={{display: 'flex', margin: '10px'}}>
+            <button onClick={this.decCount}>-</button>
+            <span style={{padding: '10px', fontSize: '20px'}}>{cnt}</span>
+            <button onClick={this.incCount}>+</button>
+          </div>
+        )
+      }
     }
-
-    componentWillUnmount() {
-      this.subscription()
-    }
-
-    incCount = () => {
-      store.incCnt()
-    }
-
-    decCount = () => {
-      store.decCnt()
-    }
-
-    render() {
-      const { cnt } = store.getState()
-
-      return (
-        <div style={{display: 'flex', margin: '10px'}}>
-          <button onClick={this.decCount}>-</button>
-          <span style={{padding: '10px', fontSize: '20px'}}>{cnt}</span>
-          <button onClick={this.incCount}>+</button>
-        </div>
-      )
-    }
-  }
 
 试想，如果每种对 state 的修改我们都要往 store 中增加方法的话，是不是很不方便，而且违反了设计模式中的开放关闭原则。开放关闭原则说的是，如果想新增功能，应该是通过扩展实现，而不是修改原来的代码。
 
