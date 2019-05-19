@@ -1,7 +1,5 @@
-
 # ES6
 
-- ref: http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/
 - var -> let / const
 - Template String
 - Destructuring Assignment
